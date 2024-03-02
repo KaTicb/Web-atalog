@@ -4,5 +4,5 @@ from . import models
 
 
 def index(request):
-    courses = models.Course.objects.all()
-    return HttpResponse(''.join([str(course) + '<br>' for course in courses]))
+    items = models.Item.objects.all()
+    return render(request, 'courses.html', {'items': items})

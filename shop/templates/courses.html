@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<table class="table mt-5 md-3 table-bordered table-striped table-hover">
+    <thead>
+    <tr>
+        <th></th>
+        <th>Title</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Students quantity</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody class="table-group-divider">
+    {% for item in items %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ item.title }}</td>
+        <td>{{ item.category }}</td>
+        <td>{{ item.price }}</td>
+        <td>{{ item.students_qty }}</td>
+        <td><button class="btn btn-primary">Buy</button></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
